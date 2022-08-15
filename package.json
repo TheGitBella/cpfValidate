@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"license": "MIT",
+	"scripts": {
+		"start": "clear && tsc ./index.ts && node ./index.js"
+	},
+	"dependencies": {
+		"typescript": "^4.7.4"
+	}
+}
