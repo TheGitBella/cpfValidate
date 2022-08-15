@@ -1,6 +1,12 @@
 // //Digite seu CPF (somente números):
 const CPF = "40173765092";
 
+//regex
+const regex = /\d{3}(\.\d{3}){2}\-\d{2}/g;
+
+const result = "123.123.123-12".match(regex);
+console.log(result);
+
 const validateNumberCPF = () => {
 	if (CPF.length != 11) {
 		console.log("CPF deve conter 11 dígitos!!!");
