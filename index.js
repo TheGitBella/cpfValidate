@@ -1,14 +1,21 @@
 // //Digite seu CPF (somente números):
-var CPF = "40173765092";
+var CPF = "401.737.650-92";
 //regex
-var regex = /\d{3}(\.\d{3}){2}\-\d{2}/g;
-var result = "123.123.123-12".match(regex);
-console.log("🚀🔴", result);
+//const regex = /(\d{3}\.\d{3}.\d{3}\-\d{2})|(\d{11})/g;
+var regex1 = /\d{3}\.\d{3}.\d{3}\-\d{2}/g;
+var regex2 = /\d{11}/g;
 var validateNumberCPF = function () {
-    if (CPF.length != 11) {
-        console.log("CPF deve conter 11 dígitos!!!");
+    if (!CPF.match(regex1) && !CPF.match(regex2)) {
+        console.log("O CPF ".concat(CPF, " \u00E9 inv\u00E1lido!!!"));
     }
     else {
+        /* 	if (CPF.match(regex1)) {
+        let abc = CPF.replace(".", "");
+        let bcd = abc.replace(".", "");
+        let cde = bcd.replace(".", "");
+        let efg = cde.replace("-", "");
+        console.log(efg, "sem pontos");
+    } */
         var firstSum = 0;
         var secondSum = 0;
         for (var i = 1; i <= 9; i++) {
@@ -33,10 +40,10 @@ var validateNumberCPF = function () {
         secondDV = 11 - secondRest;
         var DV = firstDV.toString() + secondDV.toString();
         if (DV === CPF.substring(9)) {
-            console.log("CPF validado com sucesso!!!");
+            console.log("O ".concat(CPF, " CPF foi validado com sucesso!!!"));
         }
         else {
-            console.log("CPF não existe!!!");
+            console.log("O ".concat(CPF, " CPF n\u00E3o existe!!!"));
         }
     }
 };
