@@ -2,7 +2,7 @@
 const CPF = "40173765092";
 
 //regex
-const regex = /\d{3}(\.\d{3}){2}\-\d{2}/g;
+const regex = /(\d{3}(\.\d{3}){2}\-\d{2})|(\d{11})/g;
 
 const result = "123.123.123-12".match(regex);
 console.log(result);
